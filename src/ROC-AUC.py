@@ -10,7 +10,7 @@ labels = [
     'proposed model', 'RPI-GGCN', 'LPICGAE', 'RPITER', 
     'GATLGEMF', 'LncPro', 'RPI-SE', 'LPI-Pred', 'RPI-CapsuleGAN'
 ]
-
+# Here first the other methods are retrained and got their results. Then we named the results of the methods in .csv form as file 1-file 9 in order to make it suitable to read them in for loop.
 for i in range(9):
 
     df = pd.read_csv(f'file{i + 1}.csv')
