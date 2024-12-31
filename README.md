@@ -10,13 +10,9 @@ The dataset is organized in the following structure:
 - `data/`: Contains two subfolders:
   - `raw_data/`: Stores the original dataset.
   - `generated_data/`: Contains data generated for our method.
-
-Additionally, the parameter configuration file for each dataset is located at `src/dataset_settings.ini`.
-
-
 The program is written in **Python 3.7**. To execute the code, first install the required dependencies by running the following command in your command line:
 
-pip install -r requirements.txt and run the main.py method
+pip install -r requirements.txt and run the RPI-MD.py method
 
 ### Available Methods and Parameters
 
@@ -28,11 +24,10 @@ The following table outlines the available methods and their corresponding param
 |                   | compare_different_layers                      | Compare on different number of CNN and GCN layer performance on multiple datasets.                   |
 |                   | compare_negative_sample_methods               | Compare different negative sample generation methods on multiple datasets.|
 |                   | timeAnalysis                                  | Calculate running time on different datasets.                         |
-| **Dataset Name**  | RPI369, RPI2241, RPI7317, NPInter_10412, NPInter_4158 | Dataset to be used for analysis.                                      |
+| **Dataset Name**  | RPI369, RPI2241, RPI1807, NPInter_10412, RPI2241 | Dataset to be used for analysis.                                      |
 | **Negative Generation Name** | random, sort_random, sort | Refer to our paper for the specific meaning of these parameters. |
 | **Number of Layers** | 1, 2, 3, 4                                   | Number of GCN layers.     
 | **Number of Layers** | 1, 2, 3, 4                                   | Number of CNN layers.                                         |
-| **Side Information** | True or False                                | Whether to use sequence-based features as part of the node feature.   |
 
 ## Hyper-parameters of RPI-MD
 We used different hyper-parameters on different datasets and listed them as follows:
@@ -50,9 +45,6 @@ NPInter10412_sort_random|	0.1|	0.001|	0.001|	10|	0.7|	30|
 RPI2241|	0.1|	0.003|	0.001|	30|	0.7|	50|
 RPI2241_random|	0.1|	0.003|	0.001|	30|	0.7|	50|
 RPI2241_sort_random|	0.1|	0.003|	0.001|	30|	0.7|	50|
-NPInter4158|	0.1|	0.001|	0.001|	20|	0.7|	50|
 |RPI488|	0.1|	0.0007|	0.001|	50|	0.7|	25|
 |RPI488_random|	0.1|	0.0007|	0.001|	50|	0.7|	25|
 |RPI488_sort_random|	0.1|	0.0007|	0.001|	50|	0.7|	25|
-
-These hyper-parameters are written in the configuration file `'dataset_settings.ini`'.
