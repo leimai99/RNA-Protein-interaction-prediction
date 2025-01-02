@@ -124,8 +124,11 @@ if __name__ == '__main__':
         fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_10412/protein_extracted_seq.fasta',
         savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_10412/Protein3merfeat.csv', k=3)
     generated_protein_kmer(
-        fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/protein_extracted_seq.fasta',
-        savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/Protein3merfeat.csv', k=3)
+        fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1807/protein_extracted_seq.fasta',
+        savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1807/Protein3merfeat.csv', k=3)
+    generated_protein_kmer(
+        fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI488/protein_extracted_seq.fasta',
+        savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI488/Protein3merfeat.csv', k=3)
 
 
 

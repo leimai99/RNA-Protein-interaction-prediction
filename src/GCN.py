@@ -12,17 +12,9 @@ import sys
 import os
 from model import*
 from utils import*
-import numpy as np
 import scipy.sparse as sp
-import torch
 from sklearn.model_selection import StratifiedKFold
 from sklearn.preprocessing import scale
-import pandas as pd
-import random
-from sklearn.metrics import roc_auc_score
-import math
-import os
-
 curPath = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(curPath)[0]
 sys.path.append(rootPath)

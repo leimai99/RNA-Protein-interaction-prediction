@@ -177,8 +177,8 @@ if __name__ == '__main__':
     generated_RNA_kmer(fasta_file = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI7317/RNA_extracted_seq.fasta',
         savepath = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI7317/RNA4merfeat.csv',k=4)
     generated_RNA_kmer(
-        fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/RNA_extracted_seq.fasta',
-        savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/RNA4merfeat.csv', k=4)
+        fasta_file='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1807/RNA_extracted_seq.fasta',
+        savepath='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1807/RNA4merfeat.csv', k=4)
 kmer_vector=kmer('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI2241_rna_seq.fa',k=4)
 csv_data=pd.DataFrame(data=kmer_vector)
-csv_data.to_csv('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI7317.csv')
+csv_data.to_csv('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI2241.csv')

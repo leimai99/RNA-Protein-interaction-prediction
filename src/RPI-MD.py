@@ -590,7 +590,7 @@ if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     INI_PATH = os.path.join(BASE_DIR, 'dataset_settings.ini')
     filepath = os.path.join(os.path.join(rootPath,'data'),'generated_data')
-    savepath = os.path.join(rootPath,'results')
+    savepath = os.path.join(rootPath,'result')
 
     parser = argparse.ArgumentParser(
         description="""Interaction Prediciton """)

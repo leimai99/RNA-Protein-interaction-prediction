@@ -477,6 +477,47 @@ def get_RPI2241(filepath, savepath):
     NPI_neg_sort_random.to_csv(savepath + 'NPI_neg_sort_random.csv', index=False, header=None)
 
 
+def get_RPI488(filepath, savepath):
+    NPInter4158 = pd.read_table(filepath + 'RPI488.txt', header=None, sep=' ')
+    RNA = pd.read_table(filepath + 'RPI488.txt', header=None)
+    protein = pd.read_table(filepath + 'RPI488.txt', header=None)
+    NPInter4158 = NPInter4158.values
+    index = NPInter4158.nonzero()
+    positive_index = []
+    for i, _ in enumerate(index[0]):
+        positive_index.append([index[0][i], index[1][i]])
+
+    swpath = savepath + 'protein sw_smilarity matrix.csv'
+    swscore_matrix = pd.read_csv(swpath, header=None).values
+
+    Positives,Negatives = get_Positives_and_Negatives(positive_index, protein, RNA, swscore_matrix, savepath)
+
+
+    Positives, Negatives_sort = get_edgelist(Positives, Negatives, 'sort', savepath,
+                                             len(RNA)) 
+    _, Negatives_random = get_edgelist(Positives, Negatives, 'random', savepath, len(RNA))
+    _, Negatives_sort_random = get_edgelist(Positives, Negatives, 'sort_random', savepath, len(RNA))
+
+    NPI_pos = np.zeros((len(RNA), len(protein)))
+    NPI_pos[Positives.values[:, 0], Positives.values[:, 1]] = 1
+    NPI_pos = pd.DataFrame(NPI_pos)
+    NPI_pos.to_csv(savepath + 'NPI_pos.csv', index=False, header=None)
+
+    NPI_neg_sort, NPI_neg_random, NPI_neg_sort_random = np.zeros((len(RNA), len(protein))), np.zeros(
+        (len(RNA), len(protein))), np.zeros((len(RNA), len(protein)))
+    NPI_neg_sort[Negatives_sort.values[:, 0], Negatives_sort.values[:, 1]] = 1
+    NPI_neg_sort = pd.DataFrame(NPI_neg_sort)
+    NPI_neg_sort.to_csv(savepath + 'NPI_neg_sort.csv', index=False, header=None)
+
+    NPI_neg_random[Negatives_random.values[:, 0], Negatives_random.values[:, 1]] = 1
+    NPI_neg_random = pd.DataFrame(NPI_neg_random)
+    NPI_neg_random.to_csv(savepath + 'NPI_neg_random.csv', index=False, header=None)
+
+    NPI_neg_sort_random[Negatives_sort_random.values[:, 0], Negatives_sort_random.values[:, 1]] = 1
+    NPI_neg_sort_random = pd.DataFrame(NPI_neg_sort_random)
+    NPI_neg_sort_random.to_csv(savepath + 'NPI_neg_sort_random.csv', index=False, header=None)
+
+'''
 def get_NPInter4158(filepath, savepath):
     NPInter4158 = pd.read_table(filepath + 'NPInter4158_interaction.txt', header=None, sep=' ')
     RNA = pd.read_table(filepath + 'NPInter4158_RNA.txt', header=None)
@@ -516,19 +557,23 @@ def get_NPInter4158(filepath, savepath):
     NPI_neg_sort_random[Negatives_sort_random.values[:, 0], Negatives_sort_random.values[:, 1]] = 1
     NPI_neg_sort_random = pd.DataFrame(NPI_neg_sort_random)
     NPI_neg_sort_random.to_csv(savepath + 'NPI_neg_sort_random.csv', index=False, header=None)
+'''
 
 if __name__ == '__main__':
 
 
     get_NPInter('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/NPInter10412_dataset.txt', 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_10412/')
 
+    get_RPI1807('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI1807.txt','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1807/')
+
+    get_RPI1446('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI1446.txt','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1446/')
+
     get_RPI7317('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI7317.csv','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI7317/')
 
-    get_RPI2241('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI2241/')
+    get_RPI2241('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI2241.txt','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI2241/')
 
-    get_NPInter4158('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/')
+    get_RPI488('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI488.txt','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI488/')
+
+    #get_NPInter4158('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/')
 
     get_RPI369('D:/CSU/RPI-MD-/RPI-MD/data/raw_data/RPI369_all.txt','D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI369/')
-
-
-

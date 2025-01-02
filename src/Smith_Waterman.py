@@ -132,6 +132,8 @@ def generated_SW_matrix(filename,path):
     np.savetxt(os.path.join(path, r'protein sw_smilarity matrix.csv'), finalmatrix, delimiter=',', fmt='%f')
 
 if __name__ == '__main__':
+    generated_SW_matrix(filename = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI488/protein_extracted_seq.fasta',
+                        path = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI488/')
     generated_SW_matrix(filename = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/protein_extracted_seq.fasta',
                         path = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_4158/')
     generated_SW_matrix(filename = 'D:/CSU/RPI-MD-/RPI-MD/data/generated_data/NPInter_10412/protein_extracted_seq.fasta',
@@ -140,8 +142,8 @@ if __name__ == '__main__':
                         path='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI2241/')
     generated_SW_matrix(filename='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI369/protein_extracted_seq.fasta',
                         path='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI369/')
-    generated_SW_matrix(filename='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI7317/protein_extracted_seq.fasta',
-                        path='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI7317/')
+    generated_SW_matrix(filename='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1446 /protein_extracted_seq.fasta',
+                        path='D:/CSU/RPI-MD-/RPI-MD/data/generated_data/RPI1446 /')
 
 
 

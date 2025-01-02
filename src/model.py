@@ -6,6 +6,7 @@ import numpy as np
 import torch.nn.init as init
 import os
 import random
+#from src.model import GCN
 
 class StackGCNEncoder(nn.Module):
     def __init__(self, input_dim, output_dim, num_support, layers, addloop, dropout,

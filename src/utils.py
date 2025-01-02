@@ -183,7 +183,3 @@ def performance(tp,tn,fp,fn):
     MCC = (final_tp*final_tn-final_fp*final_fn)/float(math.sqrt((final_tp+final_fp)*(final_tn+final_fn)*(final_tp+final_fn)*(final_tn+final_fp)))
     FPR = final_fp/float(final_fp+final_tn)
     return ACC,Sen, Spe,Pre,MCC,FPR
-
-
-
-

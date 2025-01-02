@@ -286,6 +286,7 @@ def independent_test(filepath, savepath, INI_PATH, DATA_SET, negative_random_sam
     EPOCHS = config.getint(DATA_SET, 'EPOCHS')
     SIDE_FEATURE_DIM = config.getint(DATA_SET, 'SIDE_FEATURE_DIM')
     GCN_HIDDEN_DIM = config.getint(DATA_SET, 'GCN_HIDDEN_DIM')
+    #CNN_HIDDEN_DIM = config.getint(DATA_SET, 'CNN_HIDDEN_DIM')
     SIDE_HIDDEN_DIM = config.getint(DATA_SET, 'SIDE_HIDDEN_DIM')
     ENCODE_HIDDEN_DIM = config.getint(DATA_SET, 'ENCODE_HIDDEN_DIM')
     WITH_SIDE = "side" if with_side_information else "withoutside"
@@ -323,7 +324,7 @@ if __name__ == "__main__":
     #savepath = os.path.join(BASE_DIR, 'results')
 
     parser = argparse.ArgumentParser(
-        description="""R-GCN Graph Autoencoder for NcRNA-protein Link Prediciton """)
+        description="""gcn interaction prediction """)
     parser.add_argument('-method',type = str,help = "choose the method you want to run.",default='independent_test')
     parser.add_argument('-dataset',
                         type=str, help='choose a dataset to implement 5-fold cross validation.', default='NPInter_10412')
